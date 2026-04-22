@@ -1,0 +1,21 @@
+<%= form_with model: link, class: "space-y-4" do |f| %>
+  <% if link.errors.any? %>
+    <div class="bg-red-50 text-red-700 p-3 rounded">
+      <% link.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, class: "block text-sm font-medium mb-1" %>
+    <%= f.text_field :name, class: "w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black" %>
+  </div>
+
+  <div>
+    <%= f.label :url, class: "block text-sm font-medium mb-1" %>
+    <%= f.url_field :url, class: "w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black" %>
+  </div>
+
+  <%= f.submit class: "bg-black text-white px-4 py-2 rounded hover:bg-gray-800 cursor-pointer" %>
+<% end %>

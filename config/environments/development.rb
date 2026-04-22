@@ -44,10 +44,9 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Highlight code that enqueued background job in logs.
-  # TO RESTORE DB: uncomment the three active_record lines below
-  # config.active_record.migration_error = :page_load
-  # config.active_record.verbose_query_logs = true
-  # config.active_record.query_log_tags_enabled = true
+  config.active_record.migration_error = :page_load
+  config.active_record.verbose_query_logs = true
+  config.active_record.query_log_tags_enabled = true
   config.active_job.verbose_enqueue_logs = true
 
   # Highlight code that triggered redirect in logs.
